@@ -152,7 +152,7 @@ public class MaintenanceSignupController: UIViewController {
         emailInput.keyboardType = .emailAddress
         emailInput.autocorrectionType = .no
         emailInput.textColor = .black.withAlphaComponent(0.8)
-        emailInput.returnKeyType = .send
+        emailInput.returnKeyType = .done
         
         emailInput.delegate = self
         
@@ -266,7 +266,7 @@ public class MaintenanceSignupController: UIViewController {
 
 extension MaintenanceSignupController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.submit()
+        self.emailInput.resignFirstResponder()
         return false
     }
     
