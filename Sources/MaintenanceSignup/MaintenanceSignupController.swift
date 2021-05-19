@@ -152,6 +152,7 @@ public class MaintenanceSignupController: UIViewController {
         emailInput.keyboardType = .emailAddress
         emailInput.autocorrectionType = .no
         emailInput.textColor = .black.withAlphaComponent(0.8)
+        emailInput.returnKeyType = .send
         
         emailInput.delegate = self
         
@@ -188,6 +189,9 @@ public class MaintenanceSignupController: UIViewController {
     @objc
     func submit() {
         self.isLoading = true
+        
+        self.emailInput.resignFirstResponder()
+        self.resignFirstResponder()
 
         viewModel.addEmailToContactList(self.email) { result in
             switch result {
@@ -262,7 +266,7 @@ public class MaintenanceSignupController: UIViewController {
 
 extension MaintenanceSignupController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailInput.resignFirstResponder()
+        self.submit()
         return false
     }
     
