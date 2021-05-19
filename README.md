@@ -1,3 +1,3 @@
 # MaintenanceSignup
 
-A description of this package.
+A generic view for collecting emails while your servers are down for maintenance.
