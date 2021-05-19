@@ -286,7 +286,7 @@ public struct MaintenanceSignupView: UIViewControllerRepresentable {
     let apiToken: String
     let listUID: String
     
-    init(
+    public init(
         apiToken: String,
         listUID: String,
         textColor: UIColor? = nil,
