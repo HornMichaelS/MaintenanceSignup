@@ -230,6 +230,7 @@ public class MaintenanceSignupController: UIViewController {
                 self.messageView,
                 self.formTitleView,
                 self.submitButton,
+                self.activityIndicator
             ] {
                 view.alpha = 0
             }
